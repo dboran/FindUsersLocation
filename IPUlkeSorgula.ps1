@@ -4,7 +4,7 @@
 #Aim of this script is to give an idea about querying users' location against any credantial theft of users. 
 #Please use your own IP databases
 
-$UsersIP=Import-Csv .\Desktop\IPKarsilastir\IP-OWA.csv #Users' IP addresses, taken from IIS Logs via Logparser like "select distinct cs-username, x-forwarded-for From \\w3svc1logpat where cs-username IS NOT NULL to IP-owa.csv" -i:w3c o:csv"
+$UsersIP=Import-Csv .\IP-OWA.csv #Users' IP addresses, taken from IIS Logs via Logparser like "select distinct cs-username, x-forwarded-for From \\w3svc1logpat where cs-username IS NOT NULL to IP-owa.csv" -i:w3c o:csv"
 
 function Convert-IPv4 {
        param   
