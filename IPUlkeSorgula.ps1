@@ -4,7 +4,7 @@
 #Aim of this script is to give an idea about querying users' location against any credantial theft of users. 
 #Please use your own IP databases
 
-$UsersIP=Import-Csv .\Desktop\IPKarsilastir\IP-OWA.csv -Delimiter ";" #Users' IP addresses, taken from IIS Logs via Logparser like "select distinct cs-username, x-forwarded-for From \\w3svc1logpat where cs-username IS NOT NULL to IP-owa.csv" -i:w3c o:csv"
+$UsersIP=Import-Csv .\Desktop\IPKarsilastir\IP-OWA.csv #Users' IP addresses, taken from IIS Logs via Logparser like "select distinct cs-username, x-forwarded-for From \\w3svc1logpat where cs-username IS NOT NULL to IP-owa.csv" -i:w3c o:csv"
 
 function Convert-IPv4 {
        param   
@@ -77,8 +77,8 @@ $PrivIPRange+=@{Low= Convert-IPv4 '192.168.0.0' -To Decimal;High=Convert-IPv4 '1
 
 # Country IP databases
 $UsersIP=Import-Csv .\Desktop\IPKarsilastir\IP-OWA.csv -Delimiter ";" #Users IP addresses, taken from IIS Logs via Logparser like "select distinct cs-username, x-forwarded-for From \\w3svc1logpat where cs-username IS NOT NULL to IP-owa.csv" -i:w3c o:csv"
-$TrIPdb = [Collections.Generic.List[Object]](Import-csv .\Desktop\IPKarsilastir\turkeyIPrange-dec.csv)
-$IPdb = [Collections.Generic.List[Object]](Import-csv .\Desktop\IPKarsilastir\IP2LOCATION-LITE-DB1.csv)
+$TrIPdb = [Collections.Generic.List[Object]](Import-csv .\turkeyIPrange-dec.csv)
+$IPdb = [Collections.Generic.List[Object]](Import-csv .\IP2LOCATION-LITE-DB1.csv)
 #endregion 
 
 $foreingUsers=@()
