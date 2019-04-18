@@ -1,4 +1,4 @@
-﻿#Written by boran@arksoft.com.tr 
+﻿#Written by boran@arksoft.com.tr on 4/19/2019
 #Lists exchange users' IP location based on IIS logs
 #Turkey's IP ranges and country IP database are taken from IP2Location.com. They are LITE and free versions and may not accurate
 #Aim of this script is to give an idea about querying users' location against any credantial theft of users. 
