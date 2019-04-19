@@ -1,9 +1,8 @@
 ﻿#Written by boran@arksoft.com.tr on 4/19/2019
 #Lists exchange users' IP location based on IIS logs
-#Turkey's IP ranges and country IP database are taken from IP2Location.com. They are LITE and free versions and may not accurate
+#Turkey's IP ranges and country IP database are taken from IP2Location.com. They are LITE and free versions and may not accurate. Please use your own IP databases.
 #Aim of this script is to give an idea about querying users' location against any credantial theft of users. 
-#Please use your own IP databases
-#Input csv file needs to be created before via logparser query. In this example, x-forwarded-for field keeps the original client IP. Use the correct field for original client IP, use c-ip field if there is LB in environment.
+#Input csv file (IP-OWA.csv) needs to be created before through logparser query. In this example, x-forwarded-for field keeps the original client IP. Use the correct field for original client IP, use c-ip field if there is LB in environment.
 
 $UsersIP=Import-Csv .\IP-OWA.csv #Users' IP addresses, taken from IIS Logs via Logparser "select distinct cs-username, x-forwarded-for From \\w3svc1logpat where cs-username IS NOT NULL to IP-owa.csv" -i:w3c o:csv"
 
